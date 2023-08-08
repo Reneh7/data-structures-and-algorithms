@@ -14,6 +14,7 @@ public class Main
             }
         }
         System.out.println("]");
+        
     }
 
     public static int[] reverseArray(int[] array)
@@ -27,4 +28,6 @@ public class Main
         }
         return reversedArray;
     }
+
+   
 }

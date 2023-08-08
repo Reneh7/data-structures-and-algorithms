@@ -4,4 +4,5 @@
 
 |  Challenge                          | Link                                  |
 |-------------------------------------|---------------------------------------|
-| First Challenge                     | [ReadMe File](./challenge1/README.md) |
+| Reverse Array                       | [ReadMe File](./challenge1/README.md) |
+| array-insert-shift                  | [ReadMe File](./challenge2/README.md) |
