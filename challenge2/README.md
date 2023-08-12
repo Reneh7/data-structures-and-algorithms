@@ -6,7 +6,7 @@
 
 ## Whiteboard Process
 
-![WhiteBoard](../assests/Challenge1%20WhiteBoard.png)
+![WhiteBoard](../assests/Challenge2%20WhiteBoard.png)
 
 ## Approach & Efficiency
 
@@ -44,6 +44,6 @@ public class Shift
 }
 ````
 
-![Output](../assests/Challenge2%20WhiteBoard.png)
+![Output](../assests/challenge%202%20output.png)
 
 After compiling, run the Java program using the java command followed by the class name and it will excute the main function that invoke the insertShiftArray function.
