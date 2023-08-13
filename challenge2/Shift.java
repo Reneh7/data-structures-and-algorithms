@@ -11,8 +11,8 @@ public class Shift
         int newValue = 6;
         System.out.println((Arrays.toString(insertShiftArray(evenArray, newValue))));
 
-        int[] oddArray = {1,2,3,4,5};
-        int newValue1 = 7;
+        int[] oddArray = {42,8,15,23,42};
+        int newValue1 = 16;
         System.out.println((Arrays.toString(insertShiftArray(oddArray, newValue1))));
 
         int[] emptyArray = {};
