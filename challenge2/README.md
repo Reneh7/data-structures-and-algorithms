@@ -27,7 +27,7 @@ public class Shift
 
     public static int[] insertShiftArray(int[] array, int n)
    {
-        int mid=array.length/2;
+        int mid=(int) Math.ceil((double) array.length / 2);
         int newSize = array.length + 1;
         int[] newArray = new int[newSize];
         for(int i=0; i<mid; i++)
