@@ -86,6 +86,6 @@ public class LinkedList
 }
 ````
 
-![Output](../../../../../../assests/challenge 6 output.png)
+![Output](./assests/challenge 6 output.png)
 
 After compiling, run the Java program using the java command followed by the class name and it will excute the main function that invoke the LinkedList class.
