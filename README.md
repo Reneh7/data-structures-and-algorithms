@@ -13,6 +13,9 @@
 | kth number Linked List cc7          | [ReadMe File](./challenge7/app/src/main/java/challenge7/README.md)         |
 | zip Linked List cc8                 | [ReadMe File](./challenge8/app/src/main/java/challenge8/README.md)         |
 | Stack and Queues                    | [ReadMe File](./StackandQueues/app/src/main/java/stackandqueues/README.md) |
+| PseudoQueue                         | [ReadMe File](./challenge11/app/src/main/java/challenge11/README.md)       |
+
+
 
 
 
