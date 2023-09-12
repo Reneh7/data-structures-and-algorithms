@@ -11,10 +11,10 @@ public class App {
         String expression3= ")";
         String expression4= "{[}";
 
-        System.out.println(check.validateBrackets(expression1));
-        System.out.println(check.validateBrackets(expression2));
-        System.out.println(check.validateBrackets(expression3));
-        System.out.println(check.validateBrackets(expression4));
+        System.out.println("{[hi]} ="+check.validateBrackets(expression1));
+        System.out.println("()[[Extra Characters]] ="+check.validateBrackets(expression2));
+        System.out.println(") ="+check.validateBrackets(expression3));
+        System.out.println("{[} ="+check.validateBrackets(expression4));
 
     }
 }

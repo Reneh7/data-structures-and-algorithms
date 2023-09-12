@@ -3,12 +3,39 @@
  */
 package challenge13;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-    @Test void appHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+    private BalancedParentheses balancedParentheses;
+
+    @BeforeEach
+    public void setUp() {
+        balancedParentheses = new BalancedParentheses();
+    }
+
+    @Test
+    public void testValidBalancedParentheses() {
+        assertTrue(balancedParentheses.validateBrackets("{[()]}"));
+        assertTrue(balancedParentheses.validateBrackets("{[()]()}"));
+        assertTrue(balancedParentheses.validateBrackets("()"));
+        assertTrue(balancedParentheses.validateBrackets("([])"));
+    }
+
+    @Test
+    public void testInvalidBalancedParentheses() {
+        assertFalse(balancedParentheses.validateBrackets("{[()]()}}"));
+    }
+
+    @Test
+    public void testEmptyString() {
+        assertTrue(balancedParentheses.validateBrackets(""));
+    }
+
+    @Test
+    public void testNoBrackets() {
+        assertTrue(balancedParentheses.validateBrackets("No brackets here"));
     }
 }
+
