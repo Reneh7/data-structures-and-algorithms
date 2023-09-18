@@ -51,4 +51,27 @@ public class BinaryTree {
             result.add(node.value);
         }
     }
+
+    public int findMaximumValue() {
+        if (root == null) {
+            throw new IllegalStateException("The tree is empty.");
+        }
+
+        return findMaximumValue(root);
+    }
+
+    private int findMaximumValue(Node currentNode) {
+        int maxValue = currentNode.value;
+        int leftMax = Integer.MIN_VALUE;
+        int rightMax = Integer.MIN_VALUE;
+
+        if (currentNode.left != null) {
+            leftMax = findMaximumValue(currentNode.left);
+        }
+
+        if (currentNode.right != null) {
+            rightMax = findMaximumValue(currentNode.right);
+        }
+        return Math.max(Math.max(maxValue, leftMax), rightMax);
+    }
 }

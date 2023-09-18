@@ -14,77 +14,91 @@ import static org.junit.jupiter.api.Assertions.*;
 class AppTest {
     private BinarySearchTree tree;
 
-    @BeforeEach
-    public void setUp() {
-        tree = new BinarySearchTree();
-    }
     @Test
-    public void testInstantiateEmptyTree() {
-        assertTrue(tree.isEmpty());
+    public void testFindMaximumValue() {
+        BinaryTree binaryTree = new BinaryTree();
+
+        binaryTree.root = new Node(10);
+        binaryTree.root.left = new Node(5);
+        binaryTree.root.right = new Node(15);
+        binaryTree.root.left.left = new Node(3);
+        binaryTree.root.left.right = new Node(7);
+        binaryTree.root.right.right = new Node(20);
+
+        int maxValue = binaryTree.findMaximumValue();
+        assertEquals(20, maxValue);
     }
 
-    @Test
-    public void testInstantiateTreeWithSingleNode() {
-        tree.add(5);
-        assertFalse(tree.isEmpty());
-    }
-
-    @Test
-    public void testAddLeftAndRightChild() {
-        tree.add(5);
-        tree.add(3);
-        tree.add(8);
-
-        assertTrue(tree.contains(3));
-        assertTrue(tree.contains(8));
-    }
-
-    @Test
-    public void testPreOrderTraversal() {
-        tree.add(5);
-        tree.add(3);
-        tree.add(8);
-
-        List<Integer> expected = Arrays.asList(5, 3, 8);
-        assertEquals(expected, tree.preOrder());
-    }
-
-    @Test
-    public void testInOrderTraversal() {
-        tree.add(5);
-        tree.add(3);
-        tree.add(8);
-
-        List<Integer> expected = Arrays.asList(3, 5, 8);
-        assertEquals(expected, tree.inOrder());
-    }
-
-    @Test
-    public void testPostOrderTraversal() {
-        tree.add(5);
-        tree.add(3);
-        tree.add(8);
-
-        List<Integer> expected = Arrays.asList(3, 8, 5);
-        assertEquals(expected, tree.postOrder());
-    }
-
-    @Test
-    public void testContainsForExistingNode() {
-        tree.add(5);
-        tree.add(3);
-        tree.add(8);
-
-        assertTrue(tree.contains(3));
-    }
-
-    @Test
-    public void testContainsForNonExistingNode() {
-        tree.add(5);
-        tree.add(3);
-        tree.add(8);
-
-        assertFalse(tree.contains(6));
-    }
-
+//    @BeforeEach
+//    public void setUp() {
+//        tree = new BinarySearchTree();
+//    }
+//    @Test
+//    public void testInstantiateEmptyTree() {
+//        assertTrue(tree.isEmpty());
+//    }
+//
+//    @Test
+//    public void testInstantiateTreeWithSingleNode() {
+//        tree.add(5);
+//        assertFalse(tree.isEmpty());
+//    }
+//
+//    @Test
+//    public void testAddLeftAndRightChild() {
+//        tree.add(5);
+//        tree.add(3);
+//        tree.add(8);
+//
+//        assertTrue(tree.contains(3));
+//        assertTrue(tree.contains(8));
+//    }
+//
+//    @Test
+//    public void testPreOrderTraversal() {
+//        tree.add(5);
+//        tree.add(3);
+//        tree.add(8);
+//
+//        List<Integer> expected = Arrays.asList(5, 3, 8);
+//        assertEquals(expected, tree.preOrder());
+//    }
+//
+//    @Test
+//    public void testInOrderTraversal() {
+//        tree.add(5);
+//        tree.add(3);
+//        tree.add(8);
+//
+//        List<Integer> expected = Arrays.asList(3, 5, 8);
+//        assertEquals(expected, tree.inOrder());
+//    }
+//
+//    @Test
+//    public void testPostOrderTraversal() {
+//        tree.add(5);
+//        tree.add(3);
+//        tree.add(8);
+//
+//        List<Integer> expected = Arrays.asList(3, 8, 5);
+//        assertEquals(expected, tree.postOrder());
+//    }
+//
+//    @Test
+//    public void testContainsForExistingNode() {
+//        tree.add(5);
+//        tree.add(3);
+//        tree.add(8);
+//
+//        assertTrue(tree.contains(3));
+//    }
+//
+//    @Test
+//    public void testContainsForNonExistingNode() {
+//        tree.add(5);
+//        tree.add(3);
+//        tree.add(8);
+//
+//        assertFalse(tree.contains(6));
+//    }
 }

@@ -5,21 +5,33 @@ package challenge15;
 
 public class App {
     public static void main(String[] args) {
-        BinarySearchTree tree = new BinarySearchTree();
-        tree.add(5);
-        tree.add(3);
-        tree.add(8);
-        tree.add(1);
-        tree.add(4);
-        tree.add(7);
-        tree.add(9);
+//        BinarySearchTree tree = new BinarySearchTree();
+//
+//        tree.add(5);
+//        tree.add(3);
+//        tree.add(8);
+//        tree.add(1);
+//        tree.add(4);
+//        tree.add(7);
+//        tree.add(9);
 
-        System.out.println("Contains 4: " + tree.contains(4));
-        System.out.println("Contains 6: " + tree.contains(6));
+//        System.out.println("Contains 4: " + tree.contains(4));
+//        System.out.println("Contains 6: " + tree.contains(6));
+//
+//        System.out.println("Preorder Traversal: " + tree.preOrder());
+//        System.out.println("Inorder Traversal: " + tree.inOrder());
+//        System.out.println("Postorder Traversal: " + tree.postOrder());
 
+        BinaryTree binaryTree = new BinaryTree();
 
-        System.out.println("Preorder Traversal: " + tree.preOrder());
-        System.out.println("Inorder Traversal: " + tree.inOrder());
-        System.out.println("Postorder Traversal: " + tree.postOrder());
+        binaryTree.root = new Node(10);
+        binaryTree.root.left = new Node(5);
+        binaryTree.root.right = new Node(15);
+        binaryTree.root.left.left = new Node(3);
+        binaryTree.root.left.right = new Node(7);
+        binaryTree.root.right.right = new Node(20);
+
+        int maxValue = binaryTree.findMaximumValue();
+        System.out.println("Maximum value in the tree: " + maxValue);
     }
 }
