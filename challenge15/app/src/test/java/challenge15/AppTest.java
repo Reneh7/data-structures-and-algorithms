@@ -13,21 +13,38 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
     private BinarySearchTree tree;
-
     @Test
-    public void testFindMaximumValue() {
+    public void testBreadthFirstTraversal() {
         BinaryTree binaryTree = new BinaryTree();
 
-        binaryTree.root = new Node(10);
-        binaryTree.root.left = new Node(5);
-        binaryTree.root.right = new Node(15);
-        binaryTree.root.left.left = new Node(3);
-        binaryTree.root.left.right = new Node(7);
-        binaryTree.root.right.right = new Node(20);
+        binaryTree.root = new Node(2);
+        binaryTree.root.left = new Node(7);
+        binaryTree.root.right = new Node(5);
+        binaryTree.root.left.left = new Node(2);
+        binaryTree.root.left.right = new Node(6);
+        binaryTree.root.right.right = new Node(9);
 
-        int maxValue = binaryTree.findMaximumValue();
-        assertEquals(20, maxValue);
+        List<Integer> result = binaryTree.breadthFirst();
+
+        List<Integer> expected = List.of(2, 7, 5, 2, 6, 9);
+
+        assertEquals(expected, result);
     }
+
+//    @Test
+//    public void testFindMaximumValue() {
+//        BinaryTree binaryTree = new BinaryTree();
+//
+//        binaryTree.root = new Node(10);
+//        binaryTree.root.left = new Node(5);
+//        binaryTree.root.right = new Node(15);
+//        binaryTree.root.left.left = new Node(3);
+//        binaryTree.root.left.right = new Node(7);
+//        binaryTree.root.right.right = new Node(20);
+//
+//        int maxValue = binaryTree.findMaximumValue();
+//        assertEquals(20, maxValue);
+//    }
 
 //    @BeforeEach
 //    public void setUp() {
