@@ -3,6 +3,8 @@
  */
 package challenge15;
 
+import java.util.List;
+
 public class App {
     public static void main(String[] args) {
 //        BinarySearchTree tree = new BinarySearchTree();
@@ -24,14 +26,25 @@ public class App {
 
         BinaryTree binaryTree = new BinaryTree();
 
-        binaryTree.root = new Node(10);
-        binaryTree.root.left = new Node(5);
-        binaryTree.root.right = new Node(15);
-        binaryTree.root.left.left = new Node(3);
-        binaryTree.root.left.right = new Node(7);
-        binaryTree.root.right.right = new Node(20);
+        binaryTree.root = new Node(2);
+        binaryTree.root.left = new Node(7);
+        binaryTree.root.right = new Node(5);
+        binaryTree.root.left.left = new Node(2);
+        binaryTree.root.left.right = new Node(6);
+        binaryTree.root.right.right = new Node(9);
 
-        int maxValue = binaryTree.findMaximumValue();
-        System.out.println("Maximum value in the tree: " + maxValue);
+//        int maxValue = binaryTree.findMaximumValue();
+//        System.out.println("Maximum value in the tree: " + maxValue);
+
+        List<Integer> result = binaryTree.breadthFirst();
+
+        System.out.print("[");
+        for (int i = 0; i < result.size(); i++) {
+            System.out.print(result.get(i));
+            if (i < result.size() - 1) {
+                System.out.print(",");
+            }
+        }
+        System.out.println("]");
     }
 }
