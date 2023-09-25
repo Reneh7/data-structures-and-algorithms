@@ -1,5 +1,6 @@
 package challenge15;
 
+import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -97,8 +98,33 @@ public class BinaryTree {
                 queue.offer(current.right);
             }
         }
-
         return result;
     }
 
+    public FizzBuzzNode fizzBuzzTree(FizzBuzzNode root) {
+        if (root == null) return null;
+
+        FizzBuzzNode newRoot = new FizzBuzzNode(transformValue(root.val));
+
+        for (FizzBuzzNode child : root.children) {
+            newRoot.children.add(fizzBuzzTree(child));
+        }
+        return newRoot;
+    }
+
+    private String transformValue(String val) {
+        int num = Integer.parseInt(val);
+
+        if (num % 3 == 0 && num % 5 == 0) {
+            return "FizzBuzz";
+        } else if (num % 3 == 0) {
+            return "Fizz";
+        } else if (num % 5 == 0) {
+            return "Buzz";
+        } else {
+            return String.valueOf(num);
+        }
+    }
 }
+
+

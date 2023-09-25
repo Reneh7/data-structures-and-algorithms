@@ -24,27 +24,48 @@ public class App {
 //        System.out.println("Inorder Traversal: " + tree.inOrder());
 //        System.out.println("Postorder Traversal: " + tree.postOrder());
 
-        BinaryTree binaryTree = new BinaryTree();
-
-        binaryTree.root = new Node(2);
-        binaryTree.root.left = new Node(7);
-        binaryTree.root.right = new Node(5);
-        binaryTree.root.left.left = new Node(2);
-        binaryTree.root.left.right = new Node(6);
-        binaryTree.root.right.right = new Node(9);
+//        BinaryTree binaryTree = new BinaryTree();
+//
+//        binaryTree.root = new Node(2);
+//        binaryTree.root.left = new Node(7);
+//        binaryTree.root.right = new Node(5);
+//        binaryTree.root.left.left = new Node(2);
+//        binaryTree.root.left.right = new Node(6);
+//        binaryTree.root.right.right = new Node(9);
 
 //        int maxValue = binaryTree.findMaximumValue();
 //        System.out.println("Maximum value in the tree: " + maxValue);
+//
+//        List<Integer> result = binaryTree.breadthFirst();
+//
+//        System.out.print("[");
+//        for (int i = 0; i < result.size(); i++) {
+//            System.out.print(result.get(i));
+//            if (i < result.size() - 1) {
+//                System.out.print(",");
+//            }
+//        }
+//        System.out.println("]");
 
-        List<Integer> result = binaryTree.breadthFirst();
+        FizzBuzzNode fizzBuzzNode1 = new FizzBuzzNode("3");
+        FizzBuzzNode fizzBuzzNode2 = new FizzBuzzNode("5");
+        FizzBuzzNode fizzBuzzNode3 = new FizzBuzzNode("15");
+        FizzBuzzNode fizzBuzzNode4 = new FizzBuzzNode("7");
 
-        System.out.print("[");
-        for (int i = 0; i < result.size(); i++) {
-            System.out.print(result.get(i));
-            if (i < result.size() - 1) {
-                System.out.print(",");
-            }
+        fizzBuzzNode1.children.add(fizzBuzzNode2);
+        fizzBuzzNode1.children.add(fizzBuzzNode3);
+        fizzBuzzNode1.children.add(fizzBuzzNode4);
+
+        BinaryTree fizzBuzzTree = new BinaryTree();
+        FizzBuzzNode newRoot = fizzBuzzTree.fizzBuzzTree(fizzBuzzNode1);
+        printTree(newRoot);
+    }
+    private static void printTree(FizzBuzzNode root) {
+        if (root == null) return;
+        System.out.print(root.val + " ");
+        for (FizzBuzzNode child : root.children) {
+            printTree(child);
         }
-        System.out.println("]");
+
     }
 }
