@@ -14,22 +14,75 @@ import static org.junit.jupiter.api.Assertions.*;
 class AppTest {
     private BinarySearchTree tree;
     @Test
-    public void testBreadthFirstTraversal() {
-        BinaryTree binaryTree = new BinaryTree();
-
-        binaryTree.root = new Node(2);
-        binaryTree.root.left = new Node(7);
-        binaryTree.root.right = new Node(5);
-        binaryTree.root.left.left = new Node(2);
-        binaryTree.root.left.right = new Node(6);
-        binaryTree.root.right.right = new Node(9);
-
-        List<Integer> result = binaryTree.breadthFirst();
-
-        List<Integer> expected = List.of(2, 7, 5, 2, 6, 9);
-
-        assertEquals(expected, result);
+    public void testFizzBuzzTreeWithNullRoot() {
+        BinaryTree tree = new BinaryTree();
+        assertNull(tree.fizzBuzzTree(null));
     }
+
+    @Test
+    public void testFizzBuzzTreeWithNoTransformation() {
+        BinaryTree tree = new BinaryTree();
+        FizzBuzzNode root = new FizzBuzzNode("7");
+        FizzBuzzNode child1 = new FizzBuzzNode("2");
+        FizzBuzzNode child2 = new FizzBuzzNode("4");
+        root.children.add(child1);
+        root.children.add(child2);
+        FizzBuzzNode newRoot = tree.fizzBuzzTree(root);
+        assertEquals("7", newRoot.val);
+        assertEquals("2", newRoot.children.get(0).val);
+        assertEquals("4", newRoot.children.get(1).val);
+    }
+
+    @Test
+    public void testFizzBuzzTreeWithFizzTransformation() {
+        BinaryTree tree = new BinaryTree();
+        FizzBuzzNode root = new FizzBuzzNode("9");
+        FizzBuzzNode child1 = new FizzBuzzNode("12");
+        root.children.add(child1);
+        FizzBuzzNode newRoot = tree.fizzBuzzTree(root);
+        assertEquals("Fizz", newRoot.val);
+        assertEquals("Fizz", newRoot.children.get(0).val);
+    }
+
+    @Test
+    public void testFizzBuzzTreeWithBuzzTransformation() {
+        BinaryTree tree = new BinaryTree();
+        FizzBuzzNode root = new FizzBuzzNode("10");
+        FizzBuzzNode child1 = new FizzBuzzNode("20");
+        root.children.add(child1);
+        FizzBuzzNode newRoot = tree.fizzBuzzTree(root);
+        assertEquals("Buzz", newRoot.val);
+        assertEquals("Buzz", newRoot.children.get(0).val);
+    }
+
+    @Test
+    public void testFizzBuzzTreeWithFizzBuzzTransformation() {
+        BinaryTree tree = new BinaryTree();
+        FizzBuzzNode root = new FizzBuzzNode("15");
+        FizzBuzzNode child1 = new FizzBuzzNode("30");
+        root.children.add(child1);
+        FizzBuzzNode newRoot = tree.fizzBuzzTree(root);
+        assertEquals("FizzBuzz", newRoot.val);
+        assertEquals("FizzBuzz", newRoot.children.get(0).val);
+    }
+
+//    @Test
+//    public void testBreadthFirstTraversal() {
+//        BinaryTree binaryTree = new BinaryTree();
+//
+//        binaryTree.root = new Node(2);
+//        binaryTree.root.left = new Node(7);
+//        binaryTree.root.right = new Node(5);
+//        binaryTree.root.left.left = new Node(2);
+//        binaryTree.root.left.right = new Node(6);
+//        binaryTree.root.right.right = new Node(9);
+//
+//        List<Integer> result = binaryTree.breadthFirst();
+//
+//        List<Integer> expected = List.of(2, 7, 5, 2, 6, 9);
+//
+//        assertEquals(expected, result);
+//    }
 
 //    @Test
 //    public void testFindMaximumValue() {
