@@ -1,5 +1,7 @@
 package challenge15;
 
+import java.util.Stack;
+
 public class BinarySearchTree extends BinaryTree {
 
     public boolean isEmpty() {
@@ -37,5 +39,31 @@ public class BinarySearchTree extends BinaryTree {
         }
 
         return value < current.value ? containsRecursive(current.left, value) : containsRecursive(current.right, value);
+    }
+
+
+    public int sumOfOddNumbers(Node root) {
+        int sum = 0;
+        if (root == null) {
+            return sum;
+        }
+        Stack<Node> stack = new Stack<>();
+        Node current = root;
+
+        while (current != null || !stack.isEmpty()) {
+            while (current != null) {
+                stack.push(current);
+                current = current.left;
+            }
+
+            current = stack.pop();
+            if (current.value % 2 != 0) {
+                sum += current.value;
+            }
+
+            current = current.right;
+        }
+
+        return sum;
     }
 }

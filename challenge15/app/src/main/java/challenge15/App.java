@@ -47,25 +47,39 @@ public class App {
 //        }
 //        System.out.println("]");
 
-        FizzBuzzNode fizzBuzzNode1 = new FizzBuzzNode("3");
-        FizzBuzzNode fizzBuzzNode2 = new FizzBuzzNode("5");
-        FizzBuzzNode fizzBuzzNode3 = new FizzBuzzNode("15");
-        FizzBuzzNode fizzBuzzNode4 = new FizzBuzzNode("7");
+//        FizzBuzzNode fizzBuzzNode1 = new FizzBuzzNode("3");
+//        FizzBuzzNode fizzBuzzNode2 = new FizzBuzzNode("5");
+//        FizzBuzzNode fizzBuzzNode3 = new FizzBuzzNode("15");
+//        FizzBuzzNode fizzBuzzNode4 = new FizzBuzzNode("7");
+//
+//        fizzBuzzNode1.children.add(fizzBuzzNode2);
+//        fizzBuzzNode1.children.add(fizzBuzzNode3);
+//        fizzBuzzNode1.children.add(fizzBuzzNode4);
+//
+//        BinaryTree fizzBuzzTree = new BinaryTree();
+//        FizzBuzzNode newRoot = fizzBuzzTree.fizzBuzzTree(fizzBuzzNode1);
+//        printTree(newRoot);
+//    }
+//    private static void printTree(FizzBuzzNode root) {
+//        if (root == null) return;
+//        System.out.print(root.val + " ");
+//        for (FizzBuzzNode child : root.children) {
+//            printTree(child);
+//        }
+//
+        Node root = new Node(8);
+        root.left = new Node(3);
+        root.right = new Node(10);
+        root.left.left = new Node(1);
+        root.left.right = new Node(6);
+        root.left.right.left = new Node(4);
+        root.left.right.right = new Node(7);
+        root.right.right = new Node(14);
+        root.right.right.left = new Node(13);
 
-        fizzBuzzNode1.children.add(fizzBuzzNode2);
-        fizzBuzzNode1.children.add(fizzBuzzNode3);
-        fizzBuzzNode1.children.add(fizzBuzzNode4);
-
-        BinaryTree fizzBuzzTree = new BinaryTree();
-        FizzBuzzNode newRoot = fizzBuzzTree.fizzBuzzTree(fizzBuzzNode1);
-        printTree(newRoot);
+        BinarySearchTree bst = new BinarySearchTree();
+        int oddSum = bst.sumOfOddNumbers(root);
+        System.out.println("Sum of odd numbers in the BST: " + oddSum);
     }
-    private static void printTree(FizzBuzzNode root) {
-        if (root == null) return;
-        System.out.print(root.val + " ");
-        for (FizzBuzzNode child : root.children) {
-            printTree(child);
-        }
 
-    }
 }
