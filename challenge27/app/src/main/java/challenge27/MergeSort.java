@@ -1,6 +1,9 @@
 package challenge27;
 public class MergeSort {
     public static void mergeSort(int[] arr) {
+        if (arr.length <= 1) {
+            return; // Base case: Array with 0 or 1 element is already sorted
+        }
 
         int mid = arr.length / 2;
         int[] left = new int[mid];
