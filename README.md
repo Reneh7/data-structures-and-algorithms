@@ -22,7 +22,7 @@
 | Fizz-Buzz-FizzBuzz                  | [ReadMe File](./challenge15/app/src/main/java/challenge15/README18.md)            |
 | Insertion Sort                      | [ReadMe File](./challenge26/app/src/main/java/challenge26/ReadME.md)              |
 | Merging Sort                        | [ReadMe File](./challenge27/app/src/main/java/challenge27/ReadMe.md)              |
-| Merging Sort                        | [ReadMe File](./challenge30/app/src/main/java/challenge30/ReadMeChallenge30.md)   |
+| Hash Table                          | [ReadMe File](./challenge30/app/src/main/java/challenge30/ReadMeChallenge30.md)   |
 
 
 
