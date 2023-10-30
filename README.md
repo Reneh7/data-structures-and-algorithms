@@ -23,6 +23,9 @@
 | Insertion Sort                      | [ReadMe File](./challenge26/app/src/main/java/challenge26/ReadME.md)              |
 | Merging Sort                        | [ReadMe File](./challenge27/app/src/main/java/challenge27/ReadMe.md)              |
 | Hash Table                          | [ReadMe File](./challenge30/app/src/main/java/challenge30/ReadMeChallenge30.md)   |
+| hashmap-repeated-word               | [ReadMe File](./challenge31/app/src/main/java/challenge31/ReadMeChallenge31.md)   |
+
+
 
 
 
