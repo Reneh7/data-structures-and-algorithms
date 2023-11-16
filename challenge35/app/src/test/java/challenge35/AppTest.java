@@ -4,9 +4,26 @@
 package challenge35;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
+    @Test
+    void testGraphSizeAfterAddingEdges() {
+        Graph graph = new Graph();
+        Vertex vertexA = graph.addVertex(1);
+        Vertex vertexB = graph.addVertex(2);
+
+        graph.addEdge(vertexA, vertexB, 4);
+
+        int expectedSize = 2;
+        assertEquals(expectedSize, graph.size());
+    }
     @Test
     public void testAddVertex() {
         Graph graph = new Graph();
