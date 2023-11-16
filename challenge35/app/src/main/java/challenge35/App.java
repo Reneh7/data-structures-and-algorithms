@@ -17,5 +17,8 @@ public class App {
         System.out.println("Vertices: " + graph.getVertices());
         System.out.println("Neighbors of vertexA: " + graph.getNeighbors(vertexA));
         System.out.println("Graph Size: " + graph.size());
+
+        Vertex startVertex = vertexA;
+        graph.breadthFirst(startVertex);
     }
 }

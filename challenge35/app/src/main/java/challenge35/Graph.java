@@ -36,4 +36,44 @@ public class Graph {
     public int size() {
         return adjacencyList.size();
     }
+    public Collection<Vertex> breadthFirst(Vertex startVertex) {
+        if (!adjacencyList.containsKey(startVertex)) {
+            throw new IllegalArgumentException("Start vertex should be in the Graph.");
+        }
+
+        Set<Vertex> visited = new HashSet<>();
+        Queue<Vertex> queue = new LinkedList<>();
+        List<Vertex> result = new ArrayList<>();
+
+        queue.add(startVertex);
+        visited.add(startVertex);
+
+        while (!queue.isEmpty()) {
+            Vertex currentVertex = queue.poll();
+            result.add(currentVertex);
+
+            List<Edge> neighbors = adjacencyList.get(currentVertex);
+            if (neighbors != null) {
+                for (Edge edge : neighbors) {
+                    Vertex neighbor = edge.destination;
+                    if (!visited.contains(neighbor)) {
+                        queue.add(neighbor);
+                        visited.add(neighbor);
+                    }
+                }
+            }
+        }
+
+        displayCollection(result);
+        return result;
+    }
+
+    private void displayCollection(Collection<Vertex> vertices) {
+        System.out.println("Breadth-First Traversal:");
+        for (Vertex vertex : vertices) {
+            System.out.print(vertex + " ");
+        }
+        System.out.println();
+    }
+
 }
