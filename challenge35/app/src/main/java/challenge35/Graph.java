@@ -67,7 +67,6 @@ public class Graph {
         displayCollection(result);
         return result;
     }
-
     private void displayCollection(Collection<Vertex> vertices) {
         System.out.println("Breadth-First Traversal:");
         for (Vertex vertex : vertices) {
