@@ -3,24 +3,47 @@
  */
 package challenge37;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 import static challenge37.Graph.businessTrip;
 
 public class App {
     public static void main(String[] args) {
-        HashMap<String, HashMap<String, Integer>> flights = new HashMap<>();
-        flights.put("Metroville", new HashMap<String, Integer>(){{put("Pandora", 82);}});
-        flights.put("Arendelle", new HashMap<String, Integer>(){{put("New Monstropolis", 45);}});
-        flights.put("New Monstropolis", new HashMap<String, Integer>(){{put("Naboo", 70);}});
-        flights.put("Naboo", new HashMap<String, Integer>(){{put("Pandora", 90);}});
+//        HashMap<String, HashMap<String, Integer>> flights = new HashMap<>();
+//        flights.put("Metroville", new HashMap<String, Integer>(){{put("Pandora", 82);}});
+//        flights.put("Arendelle", new HashMap<String, Integer>(){{put("New Monstropolis", 45);}});
+//        flights.put("New Monstropolis", new HashMap<String, Integer>(){{put("Naboo", 70);}});
+//        flights.put("Naboo", new HashMap<String, Integer>(){{put("Pandora", 90);}});
+//
+//        String[] trip1 = {"Metroville", "Pandora"};
+//        String[] trip2 = {"Arendelle", "New Monstropolis", "Naboo"};
+//        String[] trip3 = {"Narnia", "Arendelle", "Naboo"};
+//
+//        System.out.println(businessTrip(flights, trip1));
+//        System.out.println(businessTrip(flights, trip2));
+//        System.out.println(businessTrip(flights, trip3));
 
-        String[] trip1 = {"Metroville", "Pandora"};
-        String[] trip2 = {"Arendelle", "New Monstropolis", "Naboo"};
-        String[] trip3 = {"Narnia", "Arendelle", "Naboo"};
+        Vertex A = new Vertex("A");
+        Vertex B = new Vertex("B");
+        Vertex C = new Vertex("C");
+        Vertex D = new Vertex("D");
+        Vertex E = new Vertex("E");
 
-        System.out.println(businessTrip(flights, trip1));
-        System.out.println(businessTrip(flights, trip2));
-        System.out.println(businessTrip(flights, trip3));
+        Edge edge1 = new Edge(A, B, 0);
+        Edge edge2 = new Edge(A, C, 0);
+        Edge edge3 = new Edge(C, D, 0);
+        Edge edge4 = new Edge(C, E, 0);
+
+        Graph graph = new Graph();
+        graph.vertices.addAll(Arrays.asList(A, B, C, D, E));
+        graph.edges.addAll(Arrays.asList(edge1, edge2, edge3, edge4));
+
+        List<Vertex> result = graph.depthFirst(A);
+
+        for (Vertex vertex : result) {
+            System.out.print(vertex.value + " ");
+        }
     }
 }
