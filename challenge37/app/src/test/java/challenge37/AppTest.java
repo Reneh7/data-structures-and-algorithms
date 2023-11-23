@@ -5,10 +5,73 @@ package challenge37;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 class AppTest {
         @Test
+        void testDepthFirstTraversal() {
+            // Test Case 1
+            Vertex A = new Vertex("A");
+            Vertex B = new Vertex("B");
+            Vertex C = new Vertex("C");
+            Vertex D = new Vertex("D");
+            Vertex E = new Vertex("E");
+
+            Edge edge1 = new Edge(A, B, 0);
+            Edge edge2 = new Edge(A, C, 0);
+            Edge edge3 = new Edge(C, D, 0);
+            Edge edge4 = new Edge(C, E, 0);
+
+            Graph graph = new Graph();
+            graph.vertices.addAll(Arrays.asList(A, B, C, D, E));
+            graph.edges.addAll(Arrays.asList(edge1, edge2, edge3, edge4));
+
+            List<Vertex> result1 = graph.depthFirst(A);
+
+            assertEquals(5, result1.size());  // Check if all vertices are visited
+            assertEquals("A", result1.get(0).value);
+            assertEquals("B", result1.get(1).value);
+            assertEquals("C", result1.get(2).value);
+            assertEquals("D", result1.get(3).value);
+            assertEquals("E", result1.get(4).value);
+        }
+
+        @Test
+        void testAnotherDepthFirstTraversal() {
+            Vertex X = new Vertex("X");
+            Vertex Y = new Vertex("Y");
+            Vertex Z = new Vertex("Z");
+
+            Edge edge5 = new Edge(X, Y, 0);
+            Edge edge6 = new Edge(Y, Z, 0);
+
+            Graph graph2 = new Graph();
+            graph2.vertices.addAll(Arrays.asList(X, Y, Z));
+            graph2.edges.addAll(Arrays.asList(edge5, edge6));
+
+            List<Vertex> result2 = graph2.depthFirst(X);
+
+            assertEquals(3, result2.size());
+            assertEquals("X", result2.get(0).value);
+            assertEquals("Y", result2.get(1).value);
+            assertEquals("Z", result2.get(2).value);
+        }
+
+        @Test
+        void testEmptyGraph() {
+            Graph emptyGraph = new Graph();
+
+            List<Vertex> result3 = emptyGraph.depthFirst(null);
+
+            assertEquals(0, result3.size());
+        }
+
+
+
+    @Test
         public void testBusinessTripWithValidTrip() {
             HashMap<String, HashMap<String, Integer>> flights = new HashMap<>();
             flights.put("CityA", new HashMap<String, Integer>(){{put("CityB", 50);}});
